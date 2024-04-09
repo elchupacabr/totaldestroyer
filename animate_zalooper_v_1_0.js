@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Animate Zalooper 1.0
+// @name         Animate Zalooper 1.0.0
 // @namespace    http://tampermonkey.net/
 // @version      0.1
 // @description  try to take over the world!
