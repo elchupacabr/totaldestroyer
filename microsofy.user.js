@@ -1,10 +1,13 @@
 // ==UserScript==
 // @name         Microsofy
 // @namespace    microsofy
-// @version      0.1
+// @version      0.2
 // @description  try to take over the world!
 // @author       el4upacabr
 // @match        https://www.microsoft.com/ru-ru/
+// @match        https://www.microsoft.com/ru-ru
+// @match        *://www.microsoft.com/*
+// @match        https://www.microsoft.com/ru-ru/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=microsoft.com
 // @grant        none
 // ==/UserScript==
