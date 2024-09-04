@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         F1
 // @namespace    f1
-// @version      2.8
+// @version      2.9
 // @description  try to take over the world!
 // @author       el4upacabr
 // @updateURL    https://github.com/elchupacabr/totaldestroyer/raw/main/f1.user.js
