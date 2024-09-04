@@ -1,10 +1,11 @@
 // ==UserScript==
 // @name         Animate Zalooper 1.0.0
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.2
 // @description  try to take over the world!
-// @author       You
-// @match        https://*
+// @author       el4upacabr
+// @match        *://google.com/*
+// @match        *://www.google.com/*
 // @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
 // @grant        none
 // ==/UserScript==
