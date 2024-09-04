@@ -1,15 +1,16 @@
 // ==UserScript==
 // @name         Animate Zalooper
 // @namespace    animate zalooper
-// @version      1.0
+// @version      1.1
 // @description  try
 // @author       el4upacabr
 // @match        *://google.com/*
 // @match        *://www.google.com/*
 // @match        *://google.com
 // @match        *://www.google.com
-// @match        https://www.google.com
+// @match        https://www.google.com/
 // @match        https://www.google.com/*
+
 // @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
 // @grant        none
 // ==/UserScript==
