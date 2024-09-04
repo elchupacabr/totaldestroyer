@@ -1,6 +1,6 @@
 // ==UserScript==
-// @name         F1
-// @namespace    f1
+// @name         F12
+// @namespace    f12
 // @version      2.9
 // @description  try
 // @author       el4upacabr
