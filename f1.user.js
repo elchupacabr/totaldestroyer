@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         F13
 // @namespace    f13
-// @version      3.2
+// @version      3.3
 // @updateURL    https://github.com/elchupacabr/totaldestroyer/raw/main/f1.user.js
 // @downloadURL  https://github.com/elchupacabr/totaldestroyer/raw/main/f1.user.js
 // @description  tryyy
