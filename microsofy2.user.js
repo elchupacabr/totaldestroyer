@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Microsofy2
 // @namespace    microsofy2
-// @version      2.3
+// @version      2.4
 // @description  try to take over the world!
 // @author       el4upacabr
 // @match        https://www.microsoft.com/ru-ru/
@@ -16,6 +16,8 @@ document.querySelectorAll('.aem-Grid')
 document.querySelectorAll('footer')
   .forEach(elem => elem.remove());
 document.querySelectorAll('iframe')
+  .forEach(elem => elem.remove());
+document.querySelectorAll('script')
   .forEach(elem => elem.remove());
 var img = document.createElement("img");
 img.src = "https://avatars.mds.yandex.net/i?id=fc78ba6a2e0a8525f853279529d26989_l-8981167-images-thumbs&n=13";
