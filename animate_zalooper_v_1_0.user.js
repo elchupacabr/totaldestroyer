@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         Animate Zalooper 1.0.0
+// @name         Animate Zalooper
 // @namespace    animate zalooper
-// @version      0.3
-// @description  try to take over the world!
+// @version      1.0
+// @description  try
 // @author       el4upacabr
 // @match        *://google.com/*
 // @match        *://www.google.com/*
