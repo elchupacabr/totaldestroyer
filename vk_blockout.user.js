@@ -4,7 +4,7 @@ _use// ==UserScript==
 // @version      0.1
 // @description  zalooper
 // @author       elchupacabr
-// @match        https://vk.com/feed
+// @match        *://vk.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=vk.com
 // @grant        none
 // ==/UserScript==
