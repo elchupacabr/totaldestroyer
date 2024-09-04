@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Microsofy
-// @namespace    http://tampermonkey.net/
+// @namespace    microsofy
 // @version      0.1
 // @description  try to take over the world!
 // @author       el4upacabr
