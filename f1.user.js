@@ -1,6 +1,6 @@
 // ==UserScript==
-// @name         F11
-// @namespace    f11
+// @name         F13
+// @namespace    f13
 // @version      3.0
 // @description  tryyy
 // @author       el4upacabr
