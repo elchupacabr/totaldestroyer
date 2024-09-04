@@ -1,6 +1,6 @@
 // ==UserScript==
-// @name         F12
-// @namespace    f12
+// @name         F1
+// @namespace    f1
 // @version      2.9
 // @description  try
 // @author       el4upacabr
@@ -17,5 +17,5 @@ document.querySelectorAll('footer')
 var img = document.createElement("img");
 img.src = "https://avatars.mds.yandex.net/i?id=fc78ba6a2e0a8525f853279529d26989_l-8981167-images-thumbs&n=13";
 img.style.width = "100%";
-img.style.overflow = "hidden"
+img.style.overflow = "hidden";
 document.body.append(img);
