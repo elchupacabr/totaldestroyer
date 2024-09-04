@@ -1,4 +1,4 @@
-// ==UserScript==
+_use// ==UserScript==
 // @name         VK Blockout
 // @namespace    vk_blockout
 // @version      0.1
