@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         F13
 // @namespace    f13
-// @version      5.0
+// @version      5.4
 // @updateURL    https://github.com/elchupacabr/totaldestroyer/raw/main/f1.user.js
 // @downloadURL  https://github.com/elchupacabr/totaldestroyer/raw/main/f1.user.js
 // @run-at       document-idle
@@ -13,6 +13,7 @@
 // @match          *://*.bing.com/search?q=*
 // @match          *://www.bing.com/search*
 // @match          *://www.bing.com/search?q=*
+// @match          https://www.bing.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=bing.com
 // @grant        none
 // ==/UserScript==
