@@ -1,13 +1,18 @@
 // ==UserScript==
 // @name         Microsofy2
 // @namespace    microsofy2
-// @version      2.4
-// @description  try to take over the world!
+// @version      2.5
+// @updateURL    https://github.com/elchupacabr/totaldestroyer/raw/main/microsofy2.user.js
+// @downloadURL  https://github.com/elchupacabr/totaldestroyer/raw/main/microsofy2.user.js
+// @description  microsoft hehe
 // @author       el4upacabr
 // @match        https://www.microsoft.com/ru-ru/
 // @match        https://www.microsoft.com/ru-ru
 // @match        *://www.microsoft.com/*
+// @match        *://*.microsoft.com/*
 // @match        https://www.microsoft.com/ru-ru/*
+// @match        https://www.microsoft.com/uk-ua/*
+// @match        https://www.microsoft.com/en-us/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=microsoft.com
 // @grant        none
 // ==/UserScript==
