@@ -1,6 +1,6 @@
 # totaldestroyer
 фичи от дайвинчи
-![Image](/ebat/animation.gif.mp4.gif)
+![Image](/ebat/3zRJnaxzzXPpKTZBbfieU9Hushrx-ZwF9X7nRxI2y0Ov8nEctipOdllLwLQcP-N2tu3RVbtYIHCWZa-BUnc2O_N_.jpg)
 <br>
 #
 
@@ -15,7 +15,9 @@
 
 2. Включите [режим разработчика в вашем браузере](https://www.tampermonkey.net/faq.php?locale=ru#Q209).
 3. Для правильной работы на некоторых сайтах, включите [разрешить расширению доступ к страницам поиска](https://github.com/elchupacabr/totaldestroyer/issues/1).
-4. Установите любой скрипт на выбор:
+#
+![Image](/ebat/animation.gif.mp4.gif)
+5. Установите любой скрипт на выбор:
    - [google dead](https://github.com/elchupacabr/totaldestroyer/raw/main/google_dead.user.js)
    - [microsofy lite 1.6](https://github.com/elchupacabr/totaldestroyer/raw/main/microsofy.user.js)
    - [microsofy2](https://github.com/elchupacabr/totaldestroyer/raw/main/microsofy2.user.js)
