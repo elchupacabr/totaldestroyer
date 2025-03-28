@@ -11,6 +11,6 @@
     - [Userscripts](https://github.com/quoid/userscripts)
 
 2. Включите [режим разработчика в вашем браузере](https://www.tampermonkey.net/faq.php?locale=ru#Q209).
-3. Установите скрипт, перейдя по [этой ссылке](https://github.com/Kirlovon/Tape-Operator/raw/main/userscript/tape-operator.user.js). _(либо скачайте `tape-operator.user.js` из папки `userscript` и установите вручную)_
-
+3. Установите любой скрипт на выбор:
+   - [google dead](https://github.com/elchupacabr/totaldestroyer/raw/main/google_dead.user.us)
 Готово
