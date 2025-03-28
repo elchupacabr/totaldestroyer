@@ -1,6 +1,6 @@
 # totaldestroyer
 фичи от дайвинчи
-
+![Image](/ebat/3zRJnaxzzXPpKTZBbfieU9Hushrx-ZwF9X7nRxI2y0Ov8nEctipOdllLwLQcP-N2tu3RVbtYIHCWZa-BUnc2O_N_.jpg)
 ## Установка 😎
 
 1. Установите одно из расширений для запуска пользовательских скриптов:
