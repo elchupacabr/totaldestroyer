@@ -19,5 +19,6 @@
    - [F1](https://github.com/elchupacabr/totaldestroyer/raw/main/f1.user.js)
    - [vk destroy_zalooper](https://github.com/elchupacabr/totaldestroyer/raw/main/vk_destroy_zalooper.user.js)
    - [VK Blockout](https://github.com/elchupacabr/totaldestroyer/raw/main/vk_blockout.user.js)
+   - [animate_zalooper](https://github.com/elchupacabr/totaldestroyer/raw/main/animate_zalooper.user.js)
 
 Готово
