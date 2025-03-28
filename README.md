@@ -11,7 +11,7 @@
     - [Userscripts](https://github.com/quoid/userscripts)
 
 2. Включите [режим разработчика в вашем браузере](https://www.tampermonkey.net/faq.php?locale=ru#Q209).
-3. Для правильной работы на некоторых сайтах, включите "разрешить расширению доступ к страницам поиска"].
+3. Для правильной работы на некоторых сайтах, включите [разрешить расширению доступ к страницам поиска](https://github.com/elchupacabr/totaldestroyer/issues/1).
 4. Установите любой скрипт на выбор:
    - [google dead](https://github.com/elchupacabr/totaldestroyer/raw/main/google_dead.user.js)
    - [microsofy lite 1.6](https://github.com/elchupacabr/totaldestroyer/raw/main/microsofy.user.js)
