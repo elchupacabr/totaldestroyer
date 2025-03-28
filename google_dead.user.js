@@ -2,6 +2,8 @@
 // @name         google dead
 // @namespace    http://tampermonkey.net/
 // @version      1.0
+// @updateURL    https://github.com/elchupacabr/totaldestroyer/raw/refs/heads/main/google_dead.user.js
+// @downloadURL  https://github.com/elchupacabr/totaldestroyer/raw/refs/heads/main/google_dead.user.js
 // @description  try to take over the world!
 // @author       el4upackabr
 // @match        https://www.google.com/*
