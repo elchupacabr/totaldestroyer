@@ -18,7 +18,7 @@
 ![Image](/ebat/animation.gif.mp4.gif)
 
 5. Установите любой скрипт на выбор:
-   - [google dead](https://github.com/elchupacabr/totaldestroyer/raw/main/google_dead.user.js)
+   - [google dead (не работает)](https://github.com/elchupacabr/totaldestroyer/raw/main/google_dead.user.js)
    - [microsofy lite 1.6](https://github.com/elchupacabr/totaldestroyer/raw/main/microsofy.user.js)
    - [microsofy2](https://github.com/elchupacabr/totaldestroyer/raw/main/microsofy2.user.js)
    - [F1](https://github.com/elchupacabr/totaldestroyer/raw/main/f1.user.js)
