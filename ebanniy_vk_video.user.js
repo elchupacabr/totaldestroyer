@@ -2,6 +2,7 @@
 // @name         Ebaniy_vk_video
 // @namespace    ebaniy_vk_video
 // @version      2.6
+// @author       el4upacabr
 // @description  Скрывает ненужные пункты меню, оставляет только выбранные вкладки и удаляет спортивные/шортс блоки
 // @updateURL    https://github.com/elchupacabr/totaldestroyer/raw/main/ebanniy_vk_video.user.js
 // @downloadURL  https://github.com/elchupacabr/totaldestroyer/raw/main/ebanniy_vk_video.user.js
