@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Ebaniy_vk_video
 // @namespace    ebaniy_vk_video
-// @version      2.6
+// @version      3.0
 // @author       el4upacabr
 // @description  Скрывает ненужные пункты меню, оставляет только выбранные вкладки и удаляет спортивные/шортс блоки
 // @updateURL    https://github.com/elchupacabr/totaldestroyer/raw/main/ebanniy_vk_video.user.js
@@ -15,10 +15,11 @@
 (function() {
     'use strict';
 
+
     // Функция для скрытия ненужных пунктов меню
     function hideMenuItems() {
         // Скрываем элементы бокового меню
-        const menuItemsToHide = [0, 2, 3, 14, 17, 18, 19, 22, 23, 26, 27];
+        const menuItemsToHide = [0, 2, 3];
         const menuItems = document.querySelectorAll('.MenuList__item');
 
         menuItemsToHide.forEach(index => {
@@ -68,7 +69,7 @@
     }
 */
     function makeReturn() {
-    const vkLink = document.querySelector('a[data-title="ВКонтакте"]');
+    const vkLink = document.querySelector('a[data-testid="main_menu_trends"]');
 
     // Если элемент не найден — выходим из функции
     if (!vkLink) return;
@@ -152,8 +153,8 @@ if (logo) {
         top: '0',
         left: '0',
         width: '0%',
-        height: '3px',
-        backgroundColor: '#363738',
+        height: '5px',
+        backgroundColor: '#71aaeb',
         zIndex: '9999',
         transition: 'width 0.1s ease-out'
       });
@@ -244,16 +245,29 @@ function cleanCatalog() {
   }
 }
 
-function hideAnother(){
-    document.querySelector('[data-testid="main_menu_for_kids"]').style.display = 'none';
-    document.querySelector('[data-testid="main_menu_tvshow"]').style.display = 'none';
-    document.querySelector('[data-testid="main_menu_serial"]').style.display = 'flex';
-    document.querySelector('[data-testid="main_menu_politics"]').style.display = 'none';
-    document.querySelector('[data-testid="main_menu_sport"]').style.display = 'none';
-    document.querySelector('[data-testid="main_menu_interactives"]').style.display = 'none';
-    document.querySelector('[data-testid="main_menu_cybersport"]').style.display = 'none';
-    document.querySelector('[data-testid="main_menu_section_toggle"]').style.display = 'flex';
+function hideAnother() {
+    const items = {
+        "main_menu_vk_live": "none",
+        "main_menu_popular_trends": "none",
+        "main_menu_clips": "none",
+        "main_menu_for_kids": "none",
+        "main_menu_tvshow": "none",
+        "main_menu_serial": "flex",
+        "main_menu_politics": "none",
+        "main_menu_sport": "none",
+        "main_menu_interactives": "none",
+        "main_menu_cybersport": "none",
+        "main_menu_section_toggle": "flex"
+    };
+
+    for (const id in items) {
+        const el = document.querySelector(`[data-testid="${id}"]`);
+        if (el) {
+            el.style.display = items[id];
+        }
+    }
 }
+
 
 
 
@@ -263,14 +277,14 @@ function hideAnother(){
 
     // Основная функция инициализации
     function init() {
-        hideMenuItems();
+        //hideMenuItems();
         filterTabs();
         makeReturn();
         //addVkReturnButton()
-        aplyStyler();
+        //aplyStyler();
         handleLogoClick();
-        handleHomeClick();
-        cleanCatalog();
+        // handleHomeClick();
+        //cleanCatalog();
         hideAnother();
         //ExitisVK();
 
@@ -306,6 +320,6 @@ function hideAnother(){
     window.addEventListener('replacestate', init);
 
     // Периодическая проверка на случай, если MutationObserver не сработал
-    setInterval(init, 1000);
+    setInterval(init, 50);
     console.clear();
 })();
