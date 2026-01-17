@@ -1,5 +1,5 @@
 # totaldestroyer
-фичи от дайвинчи
+фичи от дайвинчи фиксы и прочие приколы))
 ![Image](/ebat/3zRJnaxzzXPpKTZBbfieU9Hushrx-ZwF9X7nRxI2y0Ov8nEctipOdllLwLQcP-N2tu3RVbtYIHCWZa-BUnc2O_N_.jpg)
 <br>
 #
@@ -18,10 +18,10 @@
 ![Image](/ebat/animation.gif.mp4.gif)
 
 5. Установите любой скрипт на выбор:
-Фиксы на сайты
+## Фиксы на сайты
+    - [Фикс на поиск Яндекса](https://github.com/elchupacabr/totaldestroyer/raw/main/fix_na_poisk_v_yandexe.user.js) (Фиксит баг с тёмной темой в пооле поиска Яндекса)
     - [ebanny_vk_video](https://github.com/elchupacabr/totaldestroyer/raw/main/ebanniy_vk_video.user.js) (Фиксит ВК Видео, если кому то оно надо)
-    -
-Приколы и анимации
+## Приколы и анимации
    - [google dead (не работает)](https://github.com/elchupacabr/totaldestroyer/raw/main/google_dead.user.js)
    - [microsofy lite 1.6](https://github.com/elchupacabr/totaldestroyer/raw/main/microsofy.user.js)
    - [microsofy2](https://github.com/elchupacabr/totaldestroyer/raw/main/microsofy2.user.js)
@@ -30,4 +30,3 @@
    - [VK Blockout](https://github.com/elchupacabr/totaldestroyer/raw/main/vk_blockout.user.js)
    - [animate_zalooper](https://github.com/elchupacabr/totaldestroyer/raw/main/animate_zalooper.user.js)
 
-Готово
