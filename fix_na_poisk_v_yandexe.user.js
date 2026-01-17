@@ -6,7 +6,7 @@
 // @updateURL    https://github.com/elchupacabr/totaldestroyer/raw/main/fix_na_poisk_v_yandexe.user.js
 // @downloadURL  https://github.com/elchupacabr/totaldestroyer/raw/main/fix_na_poisk_v_yandexe.user.js
 // @match        *://ya.ru/*
-// @match        ://yandex.ru/*
+// @match        *://yandex.ru/*
 // @run-at       document-start
 // @grant        none
 // ==/UserScript==
