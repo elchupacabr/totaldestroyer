@@ -20,6 +20,7 @@
 5. Установите любой скрипт на выбор:
 ## Фиксы на сайты
 [Фикс на поиск Яндекса](https://github.com/elchupacabr/totaldestroyer/raw/main/fix_na_poisk_v_yandexe.user.js) _(Фиксит баг с тёмной темой в пооле поиска Яндекса)_
+
 [ebanny_vk_video](https://github.com/elchupacabr/totaldestroyer/raw/main/ebanniy_vk_video.user.js) _(Фиксит ВК Видео, если кому то оно надо)_
 ## Приколы и анимации
    - [google dead (не работает)](https://github.com/elchupacabr/totaldestroyer/raw/main/google_dead.user.js)
