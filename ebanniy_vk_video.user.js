@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Ebaniy_vk_video
 // @namespace    ebaniy_vk_video
-// @version      3.0
+// @version      3.3
 // @author       el4upacabr
 // @description  Скрывает ненужные пункты меню, оставляет только выбранные вкладки и удаляет спортивные/шортс блоки
 // @updateURL    https://github.com/elchupacabr/totaldestroyer/raw/main/ebanniy_vk_video.user.js
@@ -101,18 +101,24 @@
     @keyframes dynamicSlideIn {
       0% {
         background-color: red;
+        color: white;
       }
       25%{
       background-color: yellow;
+      color: black;
       }
        50% {
         background-color: green;
+        color: black
+
       }
       75%{
       background-color: #71aaeb;
+      color: white;
       }
        100% {
         background-color: #8000ff;
+        color: white;
       }
     }
   `;
@@ -175,7 +181,7 @@ if (logo) {
   }
 
     function handleHomeClick() {
-const home = document.querySelector('.MenuList__item.MenuList__item--active');
+const home = document.querySelector('[aria-label="На главную VK Видео"]');
 if (home) {
   home.addEventListener('click', function(e) {
     if (window.location.pathname === '/') {
@@ -281,9 +287,9 @@ function hideAnother() {
         filterTabs();
         makeReturn();
         //addVkReturnButton()
-        //aplyStyler();
-        handleLogoClick();
-        // handleHomeClick();
+        aplyStyler();
+        //handleLogoClick();
+        handleHomeClick();
         //cleanCatalog();
         hideAnother();
         //ExitisVK();
