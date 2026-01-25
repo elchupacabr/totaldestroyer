@@ -29,6 +29,10 @@ style.textContent = `
  background-color: #00000000 !important;
  color: #000 !important;
 }
+#read-only-cursor-text-area{
+background-color: #00000000 !important;
+ color: #000 !important;
+ }
 `;
 
 document.head.appendChild(style);
