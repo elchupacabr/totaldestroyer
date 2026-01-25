@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         lol
+// @name         fix all sites (dark mode)
 // @namespace    https://tampermonkey.net/
 // @version      1.0
 // @description  Нихера се
