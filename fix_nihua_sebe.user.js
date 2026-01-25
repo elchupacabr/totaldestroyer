@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         lol
 // @namespace    https://tampermonkey.net/
-// @version      1.2
+// @version      1.4
 // @description  Нихера се
 // @match        *://*/*
 // @match        *://*
@@ -22,11 +22,11 @@ style.textContent = `
   textarea:focus,
   input:active,
   textarea:active {
-    color: #fff !important;
+    
     background-color: #00000000 !important;
   }
   .cm-content {
-  color: #fff !important;
+  
   background-color: #00000000 !important;
   }
 `;
