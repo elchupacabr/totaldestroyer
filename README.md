@@ -16,7 +16,7 @@
 2. Включите [режим разработчика в вашем браузере](https://www.tampermonkey.net/faq.php?locale=ru#Q209).
 3. Для правильной работы на некоторых сайтах, включите [разрешить расширению доступ к страницам поиска](https://github.com/elchupacabr/totaldestroyer/issues/1).
 ![Image](/ebat/animation.gif.mp4.gif)
-
+P.S. На некоторых браузерах нужно дополнительно включить разрешить пользовательские сценарии(юзерскрипты)
 5. Установите любой скрипт на выбор:
 ## Фиксы на сайты
 [Фикс нихуя се](https://github.com/elchupacabr/totaldestroyer/raw/main/fix_nihua_sebe.user.js) _(Фиксит баг с тёмной темой)_
