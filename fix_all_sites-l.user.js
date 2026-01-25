@@ -5,6 +5,7 @@
 // @description  Нихера се
 // @match        *://*
 // @match        *://*/*
+// @exclude      *://github.com/*
 // @updateURL    https://github.com/elchupacabr/totaldestroyer/raw/main/fix_all_sites-l.user.js
 // @downloadURL  https://github.com/elchupacabr/totaldestroyer/raw/main/fix_all_sites-l.user.js
 // @run-at       document-end
