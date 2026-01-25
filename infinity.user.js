@@ -58,38 +58,44 @@
     // ===== ИЗОБРАЖЕНИЯ =====
     const SOURCES = [
         'https://randart.ru/art/JD99/wallpapers/?v=1',
-   'https://unsplash.it/1920/1920/?random',
-  'https://unsplash.it/1920/1920/?gravity=center',
-  'https://unsplash.it/1920/1080/?random',
-   
-  'https://unsplash.it/1920/1200/?random',
-  'https://unsplash.it/2048/1152/?random',
-  'https://unsplash.it/2560/2048/?random',
-  'https://unsplash.it/2880/1800/?random',
-  'https://unsplash.it/3000/2000/?random',
-  'https://unsplash.it/3728/2481/?random',
-  'https://unsplash.it/3840/2400/?random',
-  'https://unsplash.it/4096/2560/?random',
-  'https://unsplash.it/4579/3057/?random',
-  'https://unsplash.it/1920/1080/?gravity=center',
-   
-  'https://unsplash.it/1920/1200/?random',
-  'https://unsplash.it/2048/1152/?random',
-  'https://unsplash.it/2560/2048/?random',
-  'https://unsplash.it/2880/1800/?random',
-  'https://unsplash.it/3000/2000/?random',
-  'https://unsplash.it/3728/2481/?random',
-  'https://unsplash.it/4096/2560/?random',
-  'https://unsplash.it/4096/2560/?random',
-   
-  'https://unsplash.it/1920/1200/?gravity=center',
-  'https://unsplash.it/2048/1152?gravity=center',
-  'https://unsplash.it/2560/2048?gravity=center',
-  'https://unsplash.it/2880/1800/?gravity=center',
-  'https://unsplash.it/3000/2000/?gravity=center',
-  'https://unsplash.it/3728/2481/?random',
-  'https://loremflickr.com/1920/1080/nature',
-  'https://randart.ru/art/JD99/wallpapers/?v=1'
+        'https://unsplash.it/1920/1920/?random',
+        'https://unsplash.it/1920/1920/?gravity=center',
+        'https://unsplash.it/1920/1080/?random',
+
+        'https://unsplash.it/1920/1200/?random',
+        'https://unsplash.it/2048/1152/?random',
+        'https://unsplash.it/2560/2048/?random',
+        'https://unsplash.it/2880/1800/?random',
+        'https://unsplash.it/3000/2000/?random',
+        'https://unsplash.it/3728/2481/?random',
+        'https://unsplash.it/3840/2400/?random',
+        'https://unsplash.it/4096/2560/?random',
+        'https://unsplash.it/4579/3057/?random',
+        'https://unsplash.it/1920/1080/?gravity=center',
+
+        'https://unsplash.it/1920/1200/?random',
+        'https://unsplash.it/2048/1152/?random',
+        'https://unsplash.it/2560/2048/?random',
+        'https://unsplash.it/2880/1800/?random',
+        'https://unsplash.it/3000/2000/?random',
+        'https://unsplash.it/3728/2481/?random',
+        'https://unsplash.it/4096/2560/?random',
+        'https://unsplash.it/4096/2560/?random',
+
+        'https://unsplash.it/1920/1200/?gravity=center',
+        'https://unsplash.it/2048/1152?gravity=center',
+        'https://unsplash.it/2560/2048?gravity=center',
+        'https://unsplash.it/2880/1800/?gravity=center',
+        'https://unsplash.it/3000/2000/?gravity=center',
+        'https://unsplash.it/3728/2481/?random',
+        'https://loremflickr.com/1920/1080/nature',
+        'https://randart.ru/art/JD99/wallpapers/?v=1'
+         'https://randart.ru/art/JD99/wallpapers/?v=1',
+        'https://loremflickr.com/1920/1080/landscape',
+        'https://randart.ru/art/JD99/wallpapers/',
+        'https://loremflickr.com/1920/1080/nature',
+        'https://randart.ru/art/JD99/wallpapers/?v=1',
+        'https://loremflickr.com/1920/1080/city'
     ];
 
     let images = [];
