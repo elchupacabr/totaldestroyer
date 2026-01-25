@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         lol
 // @namespace    https://tampermonkey.net/
-// @version      1.1
+// @version      1.2
 // @description  Нихера се
 // @match        *://*/*
 // @match        *://*
@@ -25,7 +25,7 @@ style.textContent = `
     color: #fff !important;
     background-color: #00000000 !important;
   }
-  .cm-content.cm-lineWrapping {
+  .cm-content {
   color: #fff !important;
   background-color: #00000000 !important;
   }
