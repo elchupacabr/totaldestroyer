@@ -1,6 +1,6 @@
 // ==UserScript==
-// @name         personalize vk id
-// @namespace    https://tampermonkey.net/
+// @name         Personalize vk id
+// @namespace    personalize vk id
 // @version      1.5
 // @description  Нихера се
 // @match        *://id.vk.com/*
