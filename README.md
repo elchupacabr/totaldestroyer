@@ -25,6 +25,9 @@
 ## Фиксы на сайты
 [Фикс нихуя се](https://github.com/elchupacabr/totaldestroyer/raw/main/fix_nihua_sebe.user.js) _(Фиксит баг с тёмной темой)_
 
+[*см также]
+(https://github.com/elchupacabr/totaldestroyer/)
+
 [ebanny_vk_video](https://github.com/elchupacabr/totaldestroyer/raw/main/ebanniy_vk_video.user.js) _(Фиксит ВК Видео, если кому то оно надо)_
 ## Приколы и анимации
    - [google dead (не работает)](https://github.com/elchupacabr/totaldestroyer/raw/main/google_dead.user.js)
