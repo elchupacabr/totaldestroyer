@@ -1,18 +1,18 @@
 // ==UserScript==
 // @name         personalize vk id
 // @namespace    https://tampermonkey.net/
-// @version      1.3
+// @version      1.5
 // @description  Нихера се
 // @match        *://id.vk.com/*
 // @match        *://id.vk.ru/*
+// @updateURL    https://github.com/elchupacabr/totaldestroyer/raw/main/vk-id_personalizator.user.js
+// @downloadURL  https://github.com/elchupacabr/totaldestroyer/raw/main/vk-id_personalizator.user.js
 // @run-at       document-end
 // @grant        none
 // ==/UserScript==
 
 (function () {
     'use strict';
-
-    const STORAGE_KEY = 'vk_auth_bg';
 
     // ===== СТИЛИ КНОПКИ =====
     const style = document.createElement('style');
@@ -44,6 +44,7 @@
 
     // ===== КНОПКА =====
     let BUTTON = document.querySelector('button[name="theme"]');
+
     if (!BUTTON) {
         BUTTON = document.createElement('button');
         BUTTON.className = 'block';
@@ -56,35 +57,43 @@
         return document.querySelector('.vkc__AuthRoot__rootContainer');
     }
 
-    // ===== ИСТОЧНИКИ =====
+    // ===== ИЗОБРАЖЕНИЯ =====
     const SOURCES = [
         'https://randart.ru/art/JD99/wallpapers/?v=1',
-        'https://randart.ru/art/JD99/wallpapers',
-        'https://loremflickr.com/1920/1080/nature'
+        'https://loremflickr.com/1920/1080/city',
+        'https://randart.ru/art/JD99/wallpapers/',
+        'https://loremflickr.com/1920/1080/nature',
+        'https://randart.ru/art/JD99/wallpapers/?v=1',
+        'https://loremflickr.com/1920/1080/city'
     ];
 
-    // ===== Функции =====
-    function getRandomImage() {
-        const src = SOURCES[Math.floor(Math.random() * SOURCES.length)];
-        return `${src}&r=${Date.now()}`; // добавляем уникальный параметр, чтобы картинка точно была новой
-    }
+    let images = [];
 
-    function applyImage(url) {
+    BUTTON.addEventListener('click', changeTheme);
+
+    // начальный фон
+    waitForContainer(changeTheme);
+
+    function changeTheme() {
         const container = getContainer();
         if (!container) return;
-        container.style.backgroundImage = `url(${url})`;
+
+        if (!images.length) prepareImages();
+
+        const [image] = images.splice(0, 1);
+
+        container.style.backgroundImage = `url(${image})`;
         container.style.backgroundSize = 'cover';
         container.style.backgroundPosition = 'center';
         container.style.backgroundRepeat = 'no-repeat';
     }
 
-    function changeTheme() {
-        const newImage = getRandomImage();
-        localStorage.setItem(STORAGE_KEY, newImage);
-        applyImage(newImage);
+    function prepareImages() {
+        images = [...new Set(SOURCES)];
+        images.sort(() => Math.random() - 0.5);
     }
 
-    // ===== Ждём контейнер VK и ставим фон =====
+    // Ждём, пока VK дорисует DOM
     function waitForContainer(cb) {
         const timer = setInterval(() => {
             if (getContainer()) {
@@ -93,18 +102,4 @@
             }
         }, 200);
     }
-
-    // ===== При загрузке страницы ставим сохранённый фон =====
-    waitForContainer(() => {
-        const savedImage = localStorage.getItem(STORAGE_KEY);
-        if (savedImage) {
-            applyImage(savedImage);
-        } else {
-            changeTheme(); // первый фон, если нет сохранённого
-        }
-    });
-
-    // ===== Клик по кнопке =====
-    BUTTON.addEventListener('click', changeTheme);
-
 })();
