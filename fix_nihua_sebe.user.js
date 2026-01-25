@@ -25,6 +25,10 @@ style.textContent = `
     color: #fff !important;
     background-color: #00000000 !important;
   }
+  .cm-content.cm-lineWrapping {
+  color: #fff !important;
+  background-color: #00000000 !important;
+  }
 `;
 
 document.head.appendChild(style);
