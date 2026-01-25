@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         fix all sites (light mode)
-// @namespace    https://tampermonkey.net/
+// @namespace    fix all sites (light mode)
 // @version      1.0
 // @description  Нихера се
 // @match        *://*
