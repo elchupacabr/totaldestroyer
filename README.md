@@ -19,7 +19,7 @@
 
 5. Установите любой скрипт на выбор:
 ## Фиксы на сайты
-[Фикс на поиск Яндекса](https://github.com/elchupacabr/totaldestroyer/raw/main/fix_na_poisk_v_yandexe.user.js) _(Фиксит баг с тёмной темой в пооле поиска Яндекса)_
+[Фикс нихуя се](https://github.com/elchupacabr/totaldestroyer/raw/main/fix_nihua_sebe.user.js) _(Фиксит баг с тёмной темой)_
 
 [ebanny_vk_video](https://github.com/elchupacabr/totaldestroyer/raw/main/ebanniy_vk_video.user.js) _(Фиксит ВК Видео, если кому то оно надо)_
 ## Приколы и анимации
