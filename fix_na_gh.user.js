@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         fix github
-// @namespace    https://tampermonkey.net/
+// @namespace    fix github
 // @version      1.0
 // @description  Нихера се
 // @match        *://github.com/*
