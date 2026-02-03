@@ -1,29 +1,57 @@
 // ==UserScript==
-// @name         lol
+// @name         fix all sites (light mode)
 // @namespace    https://tampermonkey.net/
-// @version      1.4
+// @version      1.1
 // @description  Нихера се
-// @match        *://*.yandex.ru/*
-// @match        *://*.ya.ru/*
-// @match        *://*.yandex.com/*
-// @match        *://*.yandex.by/*
-// @match        *://*.yandex.kz/*
-// @match        *://*.yandex.uz/*
-// @match        *://*.yandex.az/*
-// @match        *://*.yandex.am/*
-// @match        *://*.yandex.ge/*
-// @match        *://*.yandex.md/*
-// @match        *://*.yandex.ee/*
-// @match        *://*.yandex.lv/*
-// @match        *://*.yandex.lt/*
-// @match        *://*.yandex.tj/*
-// @match        *://*.yandex.tm/*
-// @match        *://*.yandex.fr/*
-// @match        *://*.yandex.co.il/*
-// @match        *://*.yandex.com.tr/*
-// @match        *://*.youtube.com/*
-// @updateURL    https://github.com/elchupacabr/totaldestroyer/raw/main/fix_nihua_sebe.user.js
-// @downloadURL  https://github.com/elchupacabr/totaldestroyer/raw/main/fix_nihua_sebe.user.js
+// @match        *://*
+// @match        *://*/*
+// @exclude        *://mail.yandex.ru/*
+// @exclude        *://yandex.ru/*
+// @exclude        *://ya.ru/*
+// @exclude        *://yandex.com/*
+// @exclude        *://yandex.by/*
+// @exclude        *://yandex.kz/*
+// @exclude        *://yandex.uz/*
+// @exclude        *://yandex.az/*
+// @exclude        *://yandex.am/*
+// @exclude        *://yandex.ge/*
+// @exclude        *://yandex.md/*
+// @exclude        *://yandex.ee/*
+// @exclude        *://yandex.lv/*
+// @exclude        *://yandex.lt/*
+// @exclude        *://yandex.tj/*
+// @exclude        *://yandex.tm/*
+// @exclude        *://yandex.fr/*
+// @exclude        *://yandex.co.il/*
+// @exclude        *://yandex.com.tr/*
+// @exclude        *://*.yandex.ru/*
+// @exclude        *://*.ya.ru/*
+// @exclude        *://*.yandex.com/*
+// @exclude        *://*.yandex.by/*
+// @exclude        *://*.yandex.kz/*
+// @exclude        *://*.yandex.uz/*
+// @exclude        *://*.yandex.az/*
+// @exclude        *://*.yandex.am/*
+// @exclude        *://*.yandex.ge/*
+// @exclude        *://*.yandex.md/*
+// @exclude        *://*.yandex.ee/*
+// @exclude        *://*.yandex.lv/*
+// @exclude        *://*.yandex.lt/*
+// @exclude        *://*.yandex.tj/*
+// @exclude        *://*.yandex.tm/*
+// @exclude        *://*.yandex.fr/*
+// @exclude        *://*.yandex.co.il/*
+// @exclude        *://*.yandex.com.tr/*
+// @exclude        *://*.youtube.com/*
+// @exclude        *://vk.com/*
+// @exclude        *://*.vk.com/*
+// @exclude        *://suno.com/*
+// @exclude      *://github.com/*
+// @exclude      *://*.soundcloud.com/*
+// @exclude      *://soundcloud.com/*
+// @exclude      *://*.sssu.ru/*
+// @updateURL    https://github.com/elchupacabr/totaldestroyer/raw/main/fix_all_sites-l.user.js
+// @downloadURL  https://github.com/elchupacabr/totaldestroyer/raw/main/fix_all_sites-l.user.js
 // @run-at       document-end
 // @grant        none
 // ==/UserScript==
@@ -39,7 +67,7 @@ style.textContent = `
   textarea:focus,
   input:active,
   textarea:active {
-    color: #fff !important;
+    color: #000 !important;
     background-color: #00000000 !important;
   }
   
@@ -50,5 +78,3 @@ document.head.appendChild(style);
 
 
 })();
-
-   
