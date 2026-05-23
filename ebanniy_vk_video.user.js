@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         VK Video Cleaner
 // @namespace    vk_video_cleaner
-// @version      1.0
+// @version      6.0
 // @author       el4upacabr
 // @description  Упрощённая версия: кнопка выхода с анимацией и перезагрузка по клику на логотип
 // @match        *://vkvideo.ru/*
