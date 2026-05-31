@@ -1,10 +1,12 @@
 // ==UserScript==
-// @name         VK Video Cleaner
-// @namespace    vk_video_cleaner
+// @name         Гребанный ВК Видео
+// @namespace    vk_video_fix
 // @version      6.0
 // @author       el4upacabr
 // @description  Упрощённая версия: кнопка выхода с анимацией и перезагрузка по клику на логотип
 // @match        *://vkvideo.ru/*
+// @updateURL    https://github.com/elchupacabr/totaldestroyer/raw/main/ebanniy_vk_video.user.js
+// @downloadURL  https://github.com/elchupacabr/totaldestroyer/raw/main/ebanniy_vk_video.user.js
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=vkvideo.ru
 // @grant        none
 // @run-at       document-end
@@ -97,8 +99,8 @@
 
     // Инициализация
     function init() {
-        setupReturnButton();
-        setupLogoReload();
+        setupReturnButton(); //кнопка возрата на вк
+        setupLogoReload(); //перезагрузка при нажатии на лого
     }
 
     // Запуск при загрузке
