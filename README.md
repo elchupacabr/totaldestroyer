@@ -27,6 +27,7 @@
 [*см также](https://github.com/elchupacabr/totaldestroyer/blob/main/addons.md)
 
 [ebanny_vk_video](https://github.com/elchupacabr/totaldestroyer/raw/main/ebanniy_vk_video.user.js) _(Фиксит выход из ВК Видео, если кому то оно надо)_
+[vk_fix](https://github.com/elchupacabr/totaldestroyer/raw/main/fix_vk_video.user.js) _(Фикс на ВК с видосами в той же вкладке)_
 ## Приколы и анимации
    - [google dead (не работает)](https://github.com/elchupacabr/totaldestroyer/raw/main/google_dead.user.js)
    - [microsofy lite 1.6](https://github.com/elchupacabr/totaldestroyer/raw/main/microsofy.user.js)
