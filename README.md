@@ -29,7 +29,7 @@
 [ebanny_vk_video](https://github.com/elchupacabr/totaldestroyer/raw/main/ebanniy_vk_video.user.js) _(Фиксит выход из ВК Видео, если кому то оно надо)_
 [vk_fix](https://github.com/elchupacabr/totaldestroyer/raw/main/fix_vk_video.user.js) _(Фикс на ВК с видосами в той же вкладке)_
 ## Приколы и анимации
-   - [google dead (не работает)](https://github.com/elchupacabr/totaldestroyer/raw/main/google_dead.user.js)
+   - [google dead (уже работает)](https://github.com/elchupacabr/totaldestroyer/raw/main/google_dead.user.js)
    - [microsofy lite 1.6](https://github.com/elchupacabr/totaldestroyer/raw/main/microsofy.user.js)
    - [microsofy2](https://github.com/elchupacabr/totaldestroyer/raw/main/microsofy2.user.js)
    - [F1](https://github.com/elchupacabr/totaldestroyer/raw/main/f1.user.js)
