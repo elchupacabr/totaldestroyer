@@ -7,6 +7,8 @@
 // @match        https://vk.com/*
 // @match        https://vk.ru/*
 // @match        https://vkvideo.ru/*
+// @updateURL    https://github.com/elchupacabr/totaldestroyer/raw/main/fix_vk.user.js
+// @downloadURL  https://github.com/elchupacabr/totaldestroyer/raw/main/fix_vk.user.js
 // @grant        none
 // @run-at       document-start
 // ==/UserScript==
