@@ -29,6 +29,8 @@
 [ebanny_vk_video](https://github.com/elchupacabr/totaldestroyer/raw/main/ebanniy_vk_video.user.js) _(Фиксит выход из ВК Видео, если кому то оно надо)_
 [vk_fix](https://github.com/elchupacabr/totaldestroyer/raw/main/fix_vk_video.user.js) _(Фикс на ВК с видосами в той же вкладке)_
 ## Приколы и анимации
+   - [rdb_warning](https://github.com/elchupacabr/totaldestroyer/raw/main/rgb_warning.user.js)
+![Image](/services.gif)
    - [google dead (уже работает)](https://github.com/elchupacabr/totaldestroyer/raw/main/google_dead.user.js)
 ![Image](/goooogle.png)
    - [microsofy lite 1.6](https://github.com/elchupacabr/totaldestroyer/raw/main/microsofy.user.js)
@@ -37,4 +39,5 @@
    - [vk destroy_zalooper](https://github.com/elchupacabr/totaldestroyer/raw/main/vk_destroy_zalooper.user.js)
    - [VK Blockout](https://github.com/elchupacabr/totaldestroyer/raw/main/vk_blockout.user.js)
    - [animate_zalooper](https://github.com/elchupacabr/totaldestroyer/raw/main/animate_zalooper.user.js)
+
 
