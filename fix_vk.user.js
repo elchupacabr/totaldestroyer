@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         VK Видео → Поиск видео (SPA)
 // @namespace    http://tampermonkey.net/
-// @version      4.0
+// @version      5.0
 // @description  Перенаправляет пункт "Видео" на поиск видео с сохранением SPA навигации
 // @author       elchupacabr
 // @match        https://vk.com/*
@@ -16,107 +16,127 @@
 (function() {
     'use strict';
 
-    // Определяем текущий домен
-    const currentDomain = window.location.origin;
+    // Проверяем, находимся ли мы на vkvideo.ru
+    const isVkVideo = window.location.hostname === 'vkvideo.ru';
 
-    // Новый URL для видео (сохраняем текущий домен)
+    // Определяем текущий домен для поиска
+    const currentDomain = window.location.origin;
     const NEW_VIDEO_URL = currentDomain + '/search/video';
 
     console.log('VK Script: Текущий домен', currentDomain);
+    console.log('VK Script: Режим vkvideo.ru', isVkVideo);
     console.log('VK Script: Новый URL видео', NEW_VIDEO_URL);
 
     // Функция для имитации клика по ссылке VK (SPA навигация)
     function navigateTo(url) {
-        // Создаём событие, которое VK перехватывает для SPA навигации
         const event = new PopStateEvent('popstate');
         history.pushState({}, '', url);
         window.dispatchEvent(event);
 
-        // Также пробуем вызвать их внутренний роутер
         const customEvent = new CustomEvent('vk-navigation', { detail: { url: url } });
         window.dispatchEvent(customEvent);
 
-        // Дополнительно эмулируем клик для VK React роутера
         const fakeEvent = new Event('click', { bubbles: true });
         document.body.dispatchEvent(fakeEvent);
     }
 
-    // Функция для поиска пункта "Видео"
+    // Функция для поиска пункта "Видео" ТОЛЬКО в главном левом меню
     function findVideoLink() {
-        // Прямой поиск ссылки с учётом разных доменов
-        const selectors = [
-            'a[href*="vkvideo.ru"]',
-            'a[href*="video.vk.com"]',
-            'a[href*="/video"]',
-            'a[href*="video"]',
-            '[data-testid="leftmenuitem-text"]',
-            '.left_menu_item a',
-            '.MenuItem a',
-            '.left_menu__item a'
+        // Ищем контейнер левого меню
+        const leftMenuSelectors = [
+            '[data-testid="left-menu"]',
+            '.left_menu',
+            '[role="navigation"]',
+            '.LeftMenu',
+            '.vkuiPanelHeader__in'
         ];
 
-        for (let selector of selectors) {
-            const elements = document.querySelectorAll(selector);
-            for (let el of elements) {
-                let text = el.textContent || el.innerText;
-                let parent = el.closest('a') || el;
-                if (text && (text.trim() === 'Видео' || text.includes('Видео'))) {
-                    const link = parent.tagName === 'A' ? parent : parent.closest('a');
-                    if (link) return link;
+        let leftMenu = null;
+        for (let selector of leftMenuSelectors) {
+            leftMenu = document.querySelector(selector);
+            if (leftMenu) break;
+        }
+
+        // Если нашли левое меню, ищем ссылку "Видео" только в нём
+        if (leftMenu) {
+            const videoLinks = leftMenu.querySelectorAll('a');
+            for (let link of videoLinks) {
+                const text = link.textContent.trim();
+                if (text === 'Видео') {
+                    console.log('VK Script: Найден пункт "Видео" в левом меню');
+                    return link;
                 }
             }
         }
 
-        // Поиск по всем ссылкам с текстом "Видео"
+        // Fallback: ищем ссылку, но проверяем, что она НЕ внутри канала/профиля
         const allLinks = document.querySelectorAll('a');
         for (let link of allLinks) {
             const text = link.textContent.trim();
             if (text === 'Видео') {
-                // Проверяем, что это ссылка в левом меню
-                const isLeftMenu = link.closest('[data-testid="left-menu"], .left_menu, [role="navigation"]');
-                if (isLeftMenu) return link;
-                return link;
+                // Проверяем, что ссылка не находится внутри вкладок канала/профиля
+                const isInChannelTabs = link.closest('[role="tablist"], .Tabs, .ProfileTabs, .GroupTabs, [data-testid="tabs"]');
+                const isInLeftMenu = link.closest('[data-testid="left-menu"], .left_menu, [role="navigation"]');
+
+                // Если это вкладка канала - пропускаем
+                if (isInChannelTabs && !isInLeftMenu) {
+                    console.log('VK Script: Пропускаем вкладку "Видео" в канале');
+                    continue;
+                }
+
+                // Если это левое меню или не определено - используем
+                if (isInLeftMenu || !isInChannelTabs) {
+                    console.log('VK Script: Найден пункт "Видео" (не вкладка канала)');
+                    return link;
+                }
             }
         }
 
         return null;
     }
 
-    // Проверяем, ведёт ли ссылка на видео
+    // Проверяем, ведёт ли ссылка на видео (для левого меню)
     function isVideoLink(href) {
         if (!href) return false;
-        return href.includes('vkvideo.ru') ||
-               href.includes('video.vk.com') ||
-               href.includes('/video') ||
-               href.includes('video') && !href.includes('search');
+        // Проверяем, что это ссылка на раздел видео, а не на поиск
+        return (href.includes('vkvideo.ru') || href.includes('/video')) && !href.includes('/search/video');
     }
 
-    // Основная функция замены
+    // Проверяем, является ли текущий URL страницей канала/профиля
+    function isChannelOrProfilePage() {
+        const url = window.location.pathname;
+        // Проверяем, что это страница канала (@username или /clubXXX)
+        return url.match(/^\/@[\w\._-]+/) || url.match(/^\/club\d+/) || url.match(/^\/id\d+/);
+    }
+
+    // Основная функция замены (только для левого меню)
     function replaceVideoLink() {
+        // На vkvideo.ru заменяем только если это НЕ страница канала
+        if (isVkVideo && isChannelOrProfilePage()) {
+            console.log('VK Script: На странице канала на vkvideo.ru, пропускаем замену');
+            return false;
+        }
+
         const videoLink = findVideoLink();
         if (!videoLink) return false;
 
         // Проверяем, не изменяли ли мы уже эту ссылку
         if (videoLink.getAttribute('data-modified') === 'true') return true;
 
-        // Проверяем, что это действительно ссылка на видео
-        if (!isVideoLink(videoLink.href) && videoLink.href !== NEW_VIDEO_URL) {
-            console.log('VK Script: Найдена ссылка, но это не видео', videoLink.href);
-            // Всё равно пробуем заменить, если текст "Видео"
-            if (videoLink.textContent.trim() !== 'Видео') return false;
+        // Дополнительная проверка: не заменяем вкладки каналов
+        const isTab = videoLink.closest('[role="tab"], .Tab, [data-testid="tab"]');
+        if (isTab) {
+            console.log('VK Script: Это вкладка, а не пункт меню, пропускаем');
+            return false;
         }
 
-        console.log('VK Script: Найден пункт "Видео"', videoLink.href);
-
-        // Сохраняем оригинальный href
-        const originalHref = videoLink.href;
+        console.log('VK Script: Заменяем пункт "Видео"', videoLink.href, '->', NEW_VIDEO_URL);
 
         // Меняем href на новый
         videoLink.href = NEW_VIDEO_URL;
-        videoLink.setAttribute('data-original-href', originalHref);
         videoLink.setAttribute('data-modified', 'true');
 
-        // Добавляем новый обработчик
+        // Удаляем старый обработчик и добавляем новый
         const newLink = videoLink.cloneNode(true);
         videoLink.parentNode?.replaceChild(newLink, videoLink);
 
@@ -124,14 +144,12 @@
             e.preventDefault();
             e.stopPropagation();
             e.stopImmediatePropagation();
-            console.log('VK Script: Навигация на поиск видео ->', NEW_VIDEO_URL);
+            console.log('VK Script: Навигация на поиск видео');
 
-            // Используем SPA навигацию VK
             navigateTo(NEW_VIDEO_URL);
 
-            // Если через 200ms URL не изменился, используем прямой переход
             setTimeout(() => {
-                if (window.location.href !== NEW_VIDEO_URL && window.location.pathname !== '/search/video') {
+                if (window.location.pathname !== '/search/video') {
                     console.log('VK Script: SPA не сработал, делаем прямой переход');
                     window.location.href = NEW_VIDEO_URL;
                 }
@@ -141,17 +159,9 @@
         return true;
     }
 
-    // Функция для обновления всех обработчиков
     function setupVideoLink() {
         if (replaceVideoLink()) {
             console.log('VK Script: Ссылка "Видео" успешно заменена');
-        } else {
-            // Пробуем ещё раз через таймаут
-            setTimeout(() => {
-                if (replaceVideoLink()) {
-                    console.log('VK Script: Ссылка "Видео" успешно заменена (отложенно)');
-                }
-            }, 1000);
         }
     }
 
@@ -159,45 +169,21 @@
     function observeDOM() {
         setupVideoLink();
 
-        const observer = new MutationObserver((mutations) => {
-            let shouldCheck = false;
-
-            for (let mutation of mutations) {
-                if (mutation.addedNodes.length > 0) {
-                    for (let node of mutation.addedNodes) {
-                        if (node.nodeType === 1) { // Element node
-                            if (node.matches && (node.matches('a') || node.querySelector && node.querySelector('a'))) {
-                                shouldCheck = true;
-                                break;
-                            }
-                        }
-                    }
-                }
-                if (mutation.type === 'attributes' && mutation.attributeName === 'href') {
-                    shouldCheck = true;
-                    break;
-                }
-                if (shouldCheck) break;
-            }
-
-            if (shouldCheck) {
-                setTimeout(setupVideoLink, 150);
-            }
+        const observer = new MutationObserver(() => {
+            setTimeout(setupVideoLink, 150);
         });
 
         if (document.body) {
             observer.observe(document.body, {
                 childList: true,
-                subtree: true,
-                attributes: true,
-                attributeFilter: ['href']
+                subtree: true
             });
         }
 
         return observer;
     }
 
-    // Следим за изменением URL (переходы по SPA)
+    // Следим за изменением URL
     function watchForSPANavigation() {
         let lastUrl = location.href;
 
@@ -210,21 +196,13 @@
             }
         }, 1000);
 
-        // Перехватываем pushState
         const originalPushState = history.pushState;
         history.pushState = function() {
             originalPushState.apply(this, arguments);
             setTimeout(setupVideoLink, 300);
         };
-
-        const originalReplaceState = history.replaceState;
-        history.replaceState = function() {
-            originalReplaceState.apply(this, arguments);
-            setTimeout(setupVideoLink, 300);
-        };
     }
 
-    // Запуск скрипта с задержкой для полной загрузки
     function init() {
         console.log('VK Script: Инициализация для', currentDomain);
         observeDOM();
@@ -236,24 +214,6 @@
     } else {
         init();
     }
-
-    // Дополнительная защита: перехватываем клики на странице
-    document.addEventListener('click', (e) => {
-        const link = e.target.closest('a');
-        if (link && link.getAttribute('data-modified') === 'true') {
-            return;
-        }
-
-        if (link && link.textContent.trim() === 'Видео') {
-            const href = link.href;
-            if (href && isVideoLink(href)) {
-                e.preventDefault();
-                e.stopPropagation();
-                console.log('VK Script: Перехвачен клик по видео на', currentDomain);
-                navigateTo(NEW_VIDEO_URL);
-            }
-        }
-    }, true);
 
     console.log('VK Script: Скрипт активирован для', currentDomain);
 })();
